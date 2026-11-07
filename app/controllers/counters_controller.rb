@@ -1,9 +1,17 @@
 class CountersController < ApplicationController
     def new
-        @count ||= 0
+        session[:counter] ||= 0
+        @count ||= session[:counter]
+    end
+
+    def edit
+    end
+
+    def show
     end
 
     def update
+        session[:counter] = params[:counter]
         @count = params[:counter]
     end
 end
