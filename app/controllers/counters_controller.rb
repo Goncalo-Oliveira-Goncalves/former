@@ -5,6 +5,7 @@ class CountersController < ApplicationController
     end
 
     def edit
+        @count = params[:counter]
     end
 
     def show
