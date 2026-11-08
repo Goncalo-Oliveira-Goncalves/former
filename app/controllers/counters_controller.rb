@@ -14,5 +14,11 @@ class CountersController < ApplicationController
     def update
         session[:counter] = params[:counter]
         @count = params[:counter]
+
+        respond_to do |format|
+            format.html do |html|
+                redirect_to root_path
+            end
+        end
     end
 end
