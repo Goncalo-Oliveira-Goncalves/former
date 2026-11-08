@@ -9,6 +9,7 @@ class CountersController < ApplicationController
     end
 
     def show
+        @count ||= session[:counter]
     end
 
     def update
